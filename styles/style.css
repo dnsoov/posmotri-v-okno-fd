@@ -77,7 +77,6 @@ ol {
   display: flex;
   width: 711px;
   height: 386px;
-  width: 100%;
   margin-bottom: 16px;
 }
 
@@ -326,14 +325,6 @@ ol {
   text-decoration: underline;
 }
 
-.search-form {
-  display: flex;
-}
-
-fieldset {
-  border: 0;
-}
-
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
@@ -347,4 +338,8 @@ fieldset {
 :focus {
   border: none;
   outline: none;
+}
+
+fieldset {
+  border: none;
 }
