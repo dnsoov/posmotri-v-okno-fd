@@ -91,7 +91,6 @@ ol {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-self: ;
 }
 
 .search-form__fieldset {
@@ -282,9 +281,6 @@ ol {
   text-align: left;
   -webkit-line-clamp: 1;
   margin-top: 4px;
-}
-
-.more-button-template {
 }
 
 .button {
