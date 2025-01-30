@@ -17,9 +17,8 @@ html {
   font-size: 18px;
   background-color: #1b1919;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  padding: 133px 30px 133px 30px;
+  padding: 133px 10px 133px 10px;
 }
 
 h1,
@@ -55,10 +54,10 @@ ol {
 }
 
 .content {
-  width: 1140px;
-  height: 534px;
+  inline-size: 1140px;
+
   gap: 30px;
-  opacity: 0px;
+
   display: grid;
   grid-template-areas: "left right";
   align-items: end;
@@ -66,7 +65,6 @@ ol {
 
 .result {
   width: 711px;
-  height: 456px;
   gap: 16px;
   opacity: 0px;
   grid-area: left;
@@ -83,6 +81,7 @@ ol {
 .result__video {
   width: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
@@ -102,7 +101,8 @@ ol {
 }
 
 .search-form__fieldset-title {
-  height: 27px;
+  padding-top: 2.7px;
+  padding-bottom: 2.7px;
   text-align: left;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
@@ -114,7 +114,7 @@ ol {
   display: inline-flex;
   font-family: "Fira Sans Condensed", sans-serif;
   min-width: 225px;
-  height: 27px;
+  min-height: 27px;
   font-size: 18px;
   font-weight: 400;
   border-top: 1px solid #ffffff;
@@ -127,21 +127,12 @@ ol {
   color: #fff;
 }
 
-.search-form__textfield:focus-visible {
-  border: none;
-  font-size: 18px;
-  font-weight: 400;
-  outline: 1px solid #ffffff;
-  outline-offset: 1px;
-}
-
 .search-form__textfield:active {
   border: 1px solid #ffffff;
 }
 
 .search-form__checkbox-list {
   width: 212px;
-  height: 22px;
   display: flex;
   justify-content: space-between;
 }
@@ -154,12 +145,12 @@ ol {
   gap: 5px;
 }
 
-.search-form__label:focus-visible {
+.search-form__label:has(input:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 1px;
-}
+} /* чудеса какие, даже выделение чекбокса наконец то заработало */
 
-.search-form__label-text:hover {
+label:has(.search-form__pseudo-checkbox):hover {
   text-decoration: underline;
 }
 
@@ -168,7 +159,6 @@ ol {
   border: 1px solid #fff;
   width: 19px;
   height: 19px;
-  align-items: center;
 }
 
 .search-form__checkbox[type="checkbox"]:checked + span {
@@ -184,7 +174,6 @@ ol {
   display: flex;
   flex-direction: column;
   width: 399px;
-  height: 534px;
   gap: 26px;
   opacity: 0px;
 }
@@ -205,13 +194,13 @@ ol {
 }
 
 .content__accent {
-  color: #545353;
+  color: #545050;
 }
 
 .content__list-container {
   position: relative;
   width: 399px;
-  height: 502px;
+  height: 298px;
   overflow-y: scroll;
 }
 
@@ -231,10 +220,10 @@ ol {
   display: flex;
   flex-direction: row;
   width: 390px;
-  height: 103px;
+  overflow: hidden;
 }
 
-.content__list-item:active {
+.content__card-link:active {
   background-color: #545050;
 }
 
@@ -247,6 +236,7 @@ ol {
 
 .content__video-card-thumbnail {
   width: 194px;
+  height: 103px;
   object-fit: contain;
   object-position: center;
 }
@@ -262,7 +252,12 @@ ol {
   outline-offset: 1px;
 }
 
+.content__card-link_current {
+  background-color: #545050;
+}
+
 .content__video-card-title {
+  max-width: 103px;
   margin-top: 5px;
   font-family: "Oswald", sans-serif;
   font-size: 30px;
@@ -270,6 +265,8 @@ ol {
   line-height: 30px;
   text-align: left;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .content__video-card-description {
@@ -291,6 +288,8 @@ ol {
   font-weight: 700;
   border: 1px solid #ffffff;
   text-align: center;
+  cursor: pointer;
+  color: #ffffff;
 }
 
 .button:focus-visible {
@@ -301,20 +300,16 @@ ol {
 
 .search-form__submit-button {
   width: 194px;
-  height: 34px;
-  color: #ffffff;
   opacity: 0px;
   align-self: end;
 }
 
 .more-button {
-  height: 34px;
   margin-top: 30px;
   margin-bottom: 2px;
   line-height: 21.6px;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  color: #fff;
 }
 
 .button:active {
