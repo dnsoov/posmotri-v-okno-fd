@@ -18,7 +18,8 @@ html {
   background-color: #1b1919;
   display: flex;
   justify-content: center;
-  padding: 133px 10px 133px 10px;
+  align-items: center;
+  padding: 10px;
 }
 
 h1,
@@ -55,9 +56,7 @@ ol {
 
 .content {
   inline-size: 1140px;
-
   gap: 30px;
-
   display: grid;
   grid-template-areas: "left right";
   align-items: end;
@@ -180,7 +179,6 @@ label:has(.search-form__pseudo-checkbox):hover {
 
 .title {
   width: 259px;
-  height: 210px;
   gap: 0px;
   opacity: 0px;
   font-family: "Oswald", sans-serif;
